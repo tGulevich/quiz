@@ -90,11 +90,11 @@ const plugins = () => {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'src/favicon.png'),
+          from: path.resolve(__dirname, 'client/favicon.png'),
           to: path.resolve(__dirname, 'dist')
         },
         {
-          from: path.resolve(__dirname, 'src/assets/'),
+          from: path.resolve(__dirname, 'client/assets/'),
           to: path.resolve(__dirname, 'dist')
         },
       ]
@@ -108,7 +108,7 @@ const plugins = () => {
 }
 
 module.exports = {
-  context: path.resolve(__dirname, 'src'),
+  context: path.resolve(__dirname, 'client'),
   mode: 'development',
   entry: {
     main: ['@babel/polyfill', './index.jsx'],
@@ -120,7 +120,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.json', '.png', '.jsx'],
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      '@': path.resolve(__dirname, 'client'),
     }
   },
   optimization: optimization(),
