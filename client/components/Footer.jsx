@@ -5,7 +5,6 @@ import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => {
-  console.log(theme)
   return {
     footer: {
       background: theme.palette.primary.main,
