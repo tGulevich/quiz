@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import LoginForm from './components/LoginForm'
+import LoginForm from './components/user/LoginForm'
+import SignUpForm from './components/user/SignUpForm'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import './style.scss'
 
@@ -28,7 +29,8 @@ function App() {
     <React.Fragment>
       <ThemeProvider theme={theme}>
         <Header />
-        <LoginForm />
+        {/* <LoginForm /> */}
+        <SignUpForm />
         <Footer />
       </ThemeProvider>
     </React.Fragment>
