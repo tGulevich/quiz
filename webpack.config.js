@@ -125,7 +125,7 @@ module.exports = {
   },
   optimization: optimization(),
   devServer: {
-    port: 5500,
+    port: 3000,
     watchContentBase: true,
     hot: isDev
   },

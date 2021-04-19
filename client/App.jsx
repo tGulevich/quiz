@@ -1,10 +1,12 @@
 import React from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import LoginForm from './components/user/LoginForm'
 import SignUpForm from './components/user/SignUpForm'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import './style.scss'
+// import { Switch } from '@material-ui/core'
 
 const theme = createMuiTheme({
   palette: {
@@ -25,13 +27,19 @@ const theme = createMuiTheme({
 
 export default function App() {
   return (
-    <React.Fragment>
-      <ThemeProvider theme={theme}>
-        <Header />
-        {/* <LoginForm /> */}
-        <SignUpForm />
-        <Footer />
-      </ThemeProvider>
-    </React.Fragment>
+    <BrowserRouter>
+      <React.Fragment>
+        <ThemeProvider theme={theme}>
+          <Header />
+          <Switch>
+            {/* <LoginForm /> */}
+            <Route path='/login' component={LoginForm} />
+            <Route path='/registration' component={SignUpForm} />
+            {/* <SignUpForm /> */}
+          </Switch>
+          <Footer />
+        </ThemeProvider>
+      </React.Fragment>
+    </BrowserRouter>
   )
 }
